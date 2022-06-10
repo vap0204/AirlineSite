@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bookingstyle.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="jquery-ui.js"></script>
+    <link rel="stylesheet" href="jquery-ui.css">
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel = "icon" href = 
+   "images-header page/logo.png" 
+            type = "image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>За нас</title>
+</head>
+<body>
+    <header>
+        <div id="brand"><a href="header-page.html">
+            <img class="logo"src="images-header page/logo.png" alt="">
+        </a>
+    </div>
+        <nav>
+          <ul>
+            <li><a href="header-page.html">Начало</a></li>
+            <li><a href="about.html">За нас</a></li>
+            <li><a href="booking.html">Резервирай</a></li>
+          </ul>
+        </nav>
+        <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+          <ul class="mobile-menu">
+            <li><a href="header-page.html">Начало</a></li>
+            <li><a href="about.html">За нас</a></li>
+            <li><a href="booking.html">Резервирай</a></li>
+          </ul>
+        </div>
+      </header>
+      <section class="home swiper" id="home">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide container">
+                <img src="booking-images/image (6).jpg">
+                <div class="home-text">
+                    <h1>Избра ли къде ще бъде следващото <br> <span class="cheap">ПРИКЛЮЧЕНИЕ</span></h1><br>
+                </div>
+            </div>
+        </div>
+      </section>
+    <main>
+     <article>
+         <section class="f">
+            <div class="form">
+                <div class="form-text">
+                    <h2>Резервирай билет</h2>
+                </div>
+                <div class="main-form">
+                    <form name="myForm" id="my-form" action="https://formspree.io/f/xjvllzdz" method="post" onsubmit="return validateForm()">
+                        <div>
+                            <label  for="name">Въведи трите си имена </label>
+                            <input type="text" name="visitor_name" id="name" placeholder="Трите ви имена" >
+                        </div>
+                        <div>
+                            <label for="email">Въведи email</label>
+                            <input type="email" name="visitor_email" id="email" placeholder="Еmail" required> 
+                        </div>
+                        <div>
+                            <label for="password">Парола</label>
+                            <input type="password" name="visitor_password" id="password" placeholder="Парола" required>
+                        </div>
+                        <div>
+                            <label for="people">Колко хора ще пътуват ?</label>
+                            <select name="person" id="people" required>
+                                <option value=""><---Брой билети---></option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3 </option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+ 
+                        <div>
+                            <label for="date">Избери дата и час </span>
+                            <input type="text" name="data" id="calendar" placeholder="Дата и час" required>
+                        </div>
+                        <div>
+                            <label for="phone">Въведи телефон </label>
+                            <input type="tel" name="visitor_phone" id="phone" placeholder="Въведи телефон" required>
+                        </div>
+                        <div>
+                            <label for="dest">Избери дестинация</label>
+                            <select name="des" id="dest" required>
+                                <option value=""><---Дестинация---></option>
+                                <option value="1">Малдивите</option>
+                                <option value="2">Бали </option>
+                                <option value="3">Хавай</option>
+                                <option value="4">Бора Бора</option>
+                            </select>
+ 
+                        </div>
+                        <div id="submit">
+                            <input  type="submit" value="Запази" id="submit">
+                            <input type="reset" value="Изчисти" id="reset">
+                        </div>
+ 
+                    </form>
+                    <div class="error"id="sucsess"></div>
+                </div>
+            </div>
+         </section>
+     </article>
+     <footer>
+      <section class="footer">
+  
+          <div class="box-container">
+              <div class="box">
+                  <h3>Меню</h3>
+                  <a href="header-page.html">Начало</a>
+                  <a href="about.html">За нас</a>
+                  <a href="booking.html">Резервирай</a>
+              </div>
+              <div class="box">
+                  <h3>Послвдвай ни</h3>
+                  <a href="https://www.facebook.com/vesela.apostolova.16"><i class="fa-brands fa-facebook"></i></a>
+                  <a href="https://www.instagram.com/apostolova02/?hl=en"><i class="fa-brands fa-instagram"></i></a>
+                  <a href="https://github.com/vap0204"><i class="fa-brands fa-github"></i></a>
+              </div>
+              <div class="box">
+                  <h3>Контакти</h3>
+                  <i class="fa-solid fa-location-dot"></i>
+                  <span>град Пловдив,бул.България 236</span><br>
+                  <i class="fa-solid fa-envelope-circle-check"></i><span>stu2101681070@uni-plovdiv.bg</span>
+              </div>
+              
+          </div>
+          <div class="copyright">
+              <span> by &copy; Vesela Apostolova</span>
+          </div>
+       
+  </footer>
+       
+    <script src="main.js"></script>
+    <script src="booking.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <script>
+        
+            //
+        var form = document.getElementById("my-form");
+        
+        async function handleSubmit(event) {
+          event.preventDefault();
+          var status = document.getElementById("sucsess");
+          var data = new FormData(event.target);
+          fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+          }).then(response => {
+            if (response.ok) {
+                status.classList.add("sucsess");
+              status.innerHTML = "Thanks !";
+              form.reset()
+            } else {
+              response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                    status.classList.add("error")
+                  status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                } else {
+                  status.innerHTML = "Oops! There was a problem submitting your form"
+                }
+              })
+            }
+          }).catch(error => {
+            status.innerHTML = "Oops! There was a problem submitting your form"
+          });
+        }
+        form.addEventListener("submit", handleSubmit)
+    </script>
+    <!--CALENDAR JQUERY-->
+    <script>
+        $(document).ready(function(){
+            $("#calendar").datepicker({minDate:0});
+        });
+    </script>
+    <!--SUBSCRIBE ERROR-->
+
+</body>
